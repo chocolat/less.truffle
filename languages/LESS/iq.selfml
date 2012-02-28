@@ -1,0 +1,6 @@
+(detector
+    (extension less))
+
+(folding
+    (start [/\*\*(?!\*)|\{\s*($|/\*(?!.*?\*/.*\S))])
+    (stop [(?<!\*)\*\*/|^\s*\}]))

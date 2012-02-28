@@ -1,0 +1,16 @@
+(trigger
+    (key [[cmd]S]))
+
+(name [Save to CSS])
+
+(only-in source.css.less)
+
+(input document)
+
+(output tooltip)
+
+(save file)
+
+(script [#!/usr/bin/env ruby
+file = STDIN.read[/lessc: ([^*]+\.less)/, 1] || ENV["TM_FILEPATH"]
+system("lessc --verbose \"#{file}\"")])
